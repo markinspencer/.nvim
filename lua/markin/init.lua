@@ -39,9 +39,9 @@ autocmd('BufEnter', {
     group = MarkinGroup,
     callback = function()
         if vim.bo.filetype == "zig" then
-            pcall(vim.cmd.colorscheme, "tokyonight-night")
+            pcall(SetTheme, "tokyonight-night")
         else
-            pcall(vim.cmd.colorscheme, "rose-pine-moon")
+            pcall(SetTheme, "vespernoir")
         end
     end
 })

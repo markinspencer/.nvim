@@ -1,12 +1,33 @@
 function SetTheme(color)
-    color = color or "rose-pine"
+    color = color or "vespernoir"
     vim.cmd.colorscheme(color)
+    vim.cmd("hi Directory guibg=NONE")
+    vim.cmd("hi SignColumn guibg=NONE")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 end
 
 return {
     { "erikbackman/brightburn.vim" },
+    {
+        "datsfilipe/vesper.nvim",
+        name = "vesper",
+        priority = 1000,
+        config = function()
+            require("vesper").setup({
+                transparent = true,
+                italics = {
+                    comments = false,
+                    keywords = false,
+                    functions = false,
+                    strings = false,
+                    variables = false,
+                },
+            })
+            SetTheme()
+        end,
+    },
     {
         "ellisonleao/gruvbox.nvim",
         name = "gruvbox",
@@ -18,9 +39,10 @@ return {
     },
     {
         "folke/tokyonight.nvim",
+        priority = 1000,
         config = function()
             require("tokyonight").setup({
-                style = "storm",
+                style = "moon",
                 transparent = true,
                 terminal_colors = true,
                 styles = {
@@ -42,7 +64,6 @@ return {
                     italic = false,
                 },
             })
-            SetTheme()
         end,
     },
 }

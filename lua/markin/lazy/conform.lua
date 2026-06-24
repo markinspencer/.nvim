@@ -22,6 +22,7 @@ return {
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				elixir = { "mix" },
+				odin = { lsp_format = "prefer" },
 			},
 			formatters = {
 				["clang-format"] = {
