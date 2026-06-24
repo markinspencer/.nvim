@@ -13,8 +13,9 @@ Leader key: `Space`
 | `Space + pv`    | n             | Open file explorer (netrw)      |
 | `Space + Space` | n             | Source current file             |
 | `Space + s`     | n             | Substitute word under cursor    |
+| `Space + sf`    | n             | Substitute word in current function |
 | `Space + x`     | n             | Make file executable (chmod +x) |
-| `Ctrl + s`      | n, i, v, x, s | Save file                       |
+| `Ctrl + s`      | n, i, v, x, s | Organize imports, format, save, and run hot-reload build if present |
 | `Q`             | n             | Disabled (nop)                  |
 
 ### Navigation
@@ -34,6 +35,8 @@ Leader key: `Space`
 | `J`   | v    | Move selection down |
 | `K`   | v    | Move selection up   |
 | `=ap` | n    | Format paragraph    |
+| `Space + o` | n | Insert blank line below |
+| `Space + O` | n | Insert blank line above |
 
 ### Clipboard & Registers
 
@@ -70,6 +73,7 @@ Leader key: `Space`
 | `K`           | n    | Hover info            |
 | `Space + vws` | n    | Workspace symbols     |
 | `Space + vd`  | n    | View diagnostic float |
+| `Space + e`   | n    | View diagnostic float |
 | `Space + vca` | n    | Code action           |
 | `Space + vrr` | n    | View references       |
 | `Space + vrn` | n    | Rename symbol         |
@@ -77,6 +81,15 @@ Leader key: `Space`
 | `[d`          | n    | Next diagnostic       |
 | `]d`          | n    | Prev diagnostic       |
 | `Space + zig` | n    | Restart LSP           |
+
+### Completion
+
+| Key          | Mode | Action                  |
+| ------------ | ---- | ----------------------- |
+| `Ctrl + k`   | i    | Select previous item    |
+| `Ctrl + j`   | i    | Select next item        |
+| `Tab`        | i    | Confirm selected item   |
+| `Ctrl + Space` | i  | Open completion menu    |
 
 ### Telescope
 
@@ -88,6 +101,14 @@ Leader key: `Space`
 | `Space + pWs` | n    | Grep WORD under cursor |
 | `Space + ps`  | n    | Grep string (prompted) |
 | `Space + vh`  | n    | View help tags         |
+
+### Neo-tree
+
+| Key        | Mode | Action                                  |
+| ---------- | ---- | --------------------------------------- |
+| `Ctrl + b` | n    | Toggle file tree at current file        |
+| `Enter`    | neo-tree | Open file and close tree, or expand directory |
+| `P`        | neo-tree | Toggle floating preview              |
 
 ### Harpoon
 
@@ -141,6 +162,15 @@ Leader key: `Space`
 | `Space + to` | n    | Open test output      |
 | `Space + ta` | n    | Attach to test output |
 
+### Sessions (persistence.nvim)
+
+| Key          | Mode | Action                |
+| ------------ | ---- | --------------------- |
+| `Space + qs` | n    | Restore session for cwd |
+| `Space + qS` | n    | Select a session      |
+| `Space + ql` | n    | Restore last session  |
+| `Space + qd` | n    | Stop saving session   |
+
 ### Trouble
 
 | Key          | Mode | Action            |
@@ -157,6 +187,17 @@ Leader key: `Space`
 | `Alt + j`  | i, s | Jump forward in snippet  |
 | `Alt + k`  | i, s | Jump backward in snippet |
 | `Ctrl + E` | i, s | Change snippet choice    |
+
+### Jai
+
+Available in `.jai` buffers.
+
+| Key          | Mode | Action                      |
+| ------------ | ---- | --------------------------- |
+| `Space + jb` | n    | Build current file with OpenJai |
+| `Space + jr` | n    | Build and run current file with OpenJai |
+| `:OpenJaiBuild` | command | Build current file with OpenJai |
+| `:OpenJaiRun` | command | Build and run current file with OpenJai |
 
 ### Formatting
 
@@ -182,6 +223,7 @@ Leader key: `Space`
 - **lazy.nvim** - Plugin manager
 - **telescope.nvim** - Fuzzy finder
 - **harpoon** - Quick file navigation
+- **neo-tree.nvim** - File tree
 - **treesitter** - Syntax highlighting & parsing
 - **nvim-lspconfig** - LSP configuration
 - **mason.nvim** - LSP/DAP installer
@@ -193,7 +235,8 @@ Leader key: `Space`
 - **undotree** - Undo history visualizer
 - **nvim-dap** - Debug adapter protocol
 - **neotest** - Testing framework
+- **persistence.nvim** - Session persistence
 - **zen-mode.nvim** - Distraction-free editing
 - **cloak.nvim** - Hide sensitive values in .env files
 - **which-key.nvim** - Keybind hints popup
-- **rose-pine** - Color scheme
+- **rose-pine**, **tokyonight**, **gruvbox**, **vesper**, **pastelnoir**, **vespernoir** - Color schemes
